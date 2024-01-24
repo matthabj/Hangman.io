@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman.io</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link href="https://fonts.cdnfonts.com/css/readex-pro" rel="stylesheet">
+	<link rel="stylesheet" href="style.css"/>
+	
+	<script src="/socket.io/socket.io.js"></script>
+	<script defer src="script.js"></script>
+</head>
+<body>
+	<div class="joined">
+		<p id='status-box'>No message</p>
+		<div id="word-wrapper"><p id="current-word">No word picked yet</p></div>
+	</div>
+	<form id="input-submit" onsubmit="return false;">
+		<input type="text" id="input-username" placeholder='Enter username'>
+		<input type="submit" value='Join'>
+	</form>
+	
+	<div id="admin-panel">
+		<input type="button" value='Start lobby' id="admin-start">
+		<input type="button" value='Skip guesser turn' id="admin-skip">
+	</div>
+	<div id="hanger-panel">
+		<input type="text" placeholder='Enter a word to guess' maxlength='36' id="hanger-word">
+		<input type="button" value='Set the word' id="hanger-send">
+	</div>
+	<div id="guesser-panel">
+		<input type="text" placeholder='Enter letter to guess' maxlength='1' id="guesser-letter">
+		<input type="button" value='Guess letter' id="guesser-send">
+	</div>
+	<div id="game-panel">
+		
+		<p id="used-letters">xxx</p>
+	</div>
+</body>
+</html>

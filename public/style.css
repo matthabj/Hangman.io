@@ -1,0 +1,135 @@
+body
+{
+	background-color: #0c0c0c;
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	/* justify-content: center; */
+	flex-direction: column;
+}
+:root
+{
+	--main-accent: #4c34eb;
+}
+*
+{
+	color: black;
+	font-family: 'Readex Pro', monospace;
+}
+#admin-panel, #hanger-panel, #guesser-panel
+{
+	display: none;
+	padding-top: 48px;
+}
+input
+{
+	height: 48px;
+	min-width: 180px;
+	max-width: 180px;
+	
+	border: none;
+	outline: none;
+	
+	border-radius: 20px;
+	text-align: center;
+	
+	margin: 3px;
+}
+input[type="submit"], input[type="button"]
+{
+	background-color: var(--main-accent);
+	color: white;
+	margin: 3px;
+}
+
+p
+{
+	padding: 24px;
+	min-width: 132px;
+	max-width: 132px;
+	
+	border: none;
+	outline: none;
+	
+	border-radius: 20px;
+	text-align: center;
+	background-color: white;
+}
+form,div
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#game-panel
+{
+	padding-top: 56px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+p#used-letters
+{
+	letter-spacing: 0.5rem;
+	word-break: break-all;
+}
+p#status-box
+{
+	display: flex;
+	align-items: center;
+	position: relative;
+	border-radius: 20px 0 0 20px;
+	height: 40px;
+}
+p#status-box::after
+{
+	content: '';
+	position: absolute;
+	right: 0;
+	/* top: 0; */
+	width: 2px;
+	height: 80%;
+	background-color: #ddd;
+}
+div#word-wrapper
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0 20px 20px 0;
+	height: 80px;
+	padding: 4px;
+	width: 172px;
+	
+	border: none;
+	outline: none;
+	
+	text-align: center;
+	background-color: white;
+}
+p#current-word
+{
+	/* border-radius: 0 20px 20px 0; */
+	word-break: break-all;
+	max-height: 80px;
+	max-width: none;
+	padding: 4px;
+}
+
+@media only screen and (width < 400px) {
+	form,div
+	{
+		flex-direction: column;
+	}
+	p#current-word,p#status-box
+	{
+		border-radius: 20px;
+	}
+	p#status-box::after
+	{
+		display: none;
+	}
+}
